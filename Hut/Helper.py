@@ -12,7 +12,7 @@ class Helplot:
   >>> plot_hist.Falplot
   """
   def __init__(self, history):
-    self.history = history.history
+    self.history = history.history if hasattr(history, 'history') else history
     self.accuracy = self.history['accuracy']
     self.loop = [*range(1, len(self.accuracy) + 1)]
     self.loss = self.history['loss']
@@ -34,7 +34,7 @@ class Helplot:
     plt.xlabel("Epochs")
     plt.ylabel("Accuracy")
     # Label on Conditional Situation
-    if len(self.loop) <= 20:
+    if len(self.loop) <= 15:
       plt.xticks(self.loop)
     plt.legend()
     plt.show()
@@ -55,7 +55,7 @@ class Helplot:
     plt.xlabel("Epochs")
     plt.ylabel("Loss")
     # Label on Conditional Situation
-    if len(self.loop) <= 20:
+    if len(self.loop) <= 15:
       plt.xticks(self.loop)
     plt.legend()
     plt.show()
