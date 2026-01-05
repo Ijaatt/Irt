@@ -11,7 +11,9 @@ def barSinglePlot(tabel, data, **plotargs):
   # Labeler in Containers
   for container in plot.containers:
     # Single Bar Labels
-    plot.bar_label(container);
+    plot.bar_label(container)
+  # Return Plot
+  return plot
 
 def barRelationalPlot(tabel, x, y, **plotargs):
   """
@@ -24,4 +26,6 @@ def barRelationalPlot(tabel, x, y, **plotargs):
   # Labeler in Containers
   for container in plot.containers:
     # Single Bar Labels
-    plot.bar_label(container);
+    plot.bar_label(container)
+  # Return Plot
+  return plot
